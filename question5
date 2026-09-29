@@ -1,0 +1,38 @@
+from abc import ABC, abstractmethod
+
+class Filehandler(ABC):
+
+    @abstractmethod
+    def read(self):
+        pass
+
+    @abstractmethod
+    def write(self):
+        pass
+
+class TextFilehandler(Filehandler):
+
+    def read(self):
+        print("Reading data from a text file.")
+
+    def write(self):
+        print("Writing data to a text file.")
+
+class binaryFilehandler(Filehandler):
+
+    def read(self):
+        print("Reading data from a binary file.")
+
+    def write(self):
+        print("Writing data to a binary file.")
+
+# Creating objects
+text_file = TextFilehandler()
+binary_file = binaryFilehandler()
+
+# Using the methods
+text_file.read()
+text_file.write()
+
+binary_file.read()
+binary_file.write()
